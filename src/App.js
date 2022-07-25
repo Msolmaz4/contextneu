@@ -2,7 +2,9 @@
 
 import React from 'react';
 import Button from './components/Button';
-import ThemaContext from './context/ThemaContext';
+import User from './components/User';
+import { ThemaProvider}  from './context/ThemaContext';
+import {UserProvider} from './context/UserContext'
 
 function App() {
 
@@ -14,9 +16,13 @@ function App() {
   
   return (
 
-     <ThemaContext.Provider value='dark'>
-        <Button/>
-     </ThemaContext.Provider>
+     <ThemaProvider>
+      <UserProvider>
+      <Button/>
+      <User/>
+      </UserProvider>
+      
+     </ThemaProvider>
   );
 }
 

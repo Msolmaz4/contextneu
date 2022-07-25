@@ -5,12 +5,14 @@ import ThemaContext from '../context/ThemaContext'
 
 const Button = () => {
 
-    const data = useContext(ThemaContext)
+    const{ theme, setTheme }= useContext(ThemaContext)
 
-    console.log(data)
+    console.log(theme,setTheme)
   return (
     <div>Button
-        {data}
+        aktiv theme = {theme}
+        <button onClick={()=>setTheme(theme === 'dark' ? 'light' : 'dark')}>change thema</button>
+        
     </div>
   )
 }
